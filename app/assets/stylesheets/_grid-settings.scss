@@ -1,0 +1,12 @@
+@import "neat-helpers";
+
+// Change the grid settings
+$column: golden-ratio(1em, 3);
+$gutter: golden-ratio(1em, -1);
+$grid-columns: 12;
+$font-size:16px;
+$max-width: em(900);
+
+// Define your breakpoints
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(min-width 481px max-width 768px 12);

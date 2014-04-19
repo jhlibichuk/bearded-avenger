@@ -1,38 +1,49 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+gem 'rails', '3.2.17'
+gem "mysql2"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'devise', '~> 2.0.5'
+gem 'jquery-rails', '~> 2.0.0'
+gem 'thin', "~> 1.5"
+gem 'formtastic', "~> 2.2.1"
+gem "haml", "~> 4.0.2"
+gem "haml-rails", "~> 0.4"
+gem 'activeadmin', "~> 0.6.0"
+gem "cancan", "~> 1.6.10"
+gem 'nokogiri', "~> 1.5.9"
+gem 'kaminari', "~> 0.14.1"
+gem "carrierwave", "~> 0.9.0"
+gem "rmagick", "~> 2.13.2"
+gem "fog", "~> 1.18.0"
+gem "honeypot-captcha", "~> 0.0.2"
+gem 'omniauth-facebook'
+gem "unf", "~> 0.1.3"
+gem "neat", "~> 1.3.0"
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem "better_errors", ">= 0.7.2"
+  gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
+  gem "capistrano", "~> 3.0.1", require: false
+  gem "capistrano-rails", "~> 1.1.0", require: false
+  gem "capistrano-bundler", "~> 1.1.1", require: false
+  gem "table_print", "~> 1.5.0"
+  gem "mail_view", "~> 2.0.1"
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development, :test do
+    gem "rspec-rails", ">= 2.12.2"
+    gem "factory_girl_rails", "~> 4.0"
+    gem "capybara", "~> 2.1.0"
+    gem "debugger", "~> 1.5.0"
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+group :test do
+  gem 'simplecov', "~> 0.7.1"
+end

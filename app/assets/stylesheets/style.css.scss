@@ -1,0 +1,75 @@
+/* =========================================
+ CPSH CSS
+ Josh Hlibichuk 4/18/2014
+=============================================*/
+
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+$background:#262630;
+$foreground:#35455C;
+$font:#BEAEAE;
+
+$red:#E14A4A;
+$orange:#EDAD61;
+$gray:#BEAEAE; /*font color also */
+$green:#29718F;
+$white: #fff;
+$black: #000;
+
+@import "overrides";
+h1,h2,h3{font-weight:300;padding:10px;text-align:center;width:100%; color:$white;}
+h1 { font-size:32px; }
+h2 { font-size:26px; }
+h3 { font-size:20px; }
+.colored{
+  width:100%; 
+  border-radius:6px 6px 0 0;
+}
+.colored.red { background:$red; }
+.colored.orange { background:$orange; }
+.colored.green { background:$green; }
+
+body {
+  font-family: 'Source Sans Pro', 'Arial', sans-serif;
+  font-weight: 400;
+  color: $font;
+  background: $background url(/assets/bgslice.png) repeat-x fixed;
+  font-size:16px;
+}
+
+div.container { @include outer-container; padding-bottom: 10px;}
+.header {
+  min-height:125px;
+}
+.main {
+  min-height:1400px;
+    padding:15px;
+    .control.left, .control.right{
+      width:100%;
+      margin-bottom:20px;
+    }
+}
+
+.control {
+  background-color:$foreground;
+  border-radius:6px;
+}
+.content {
+  padding:10px;
+}
+
+.footer {
+  min-height:100px;
+}
+
+
+
+/* responsive
+=============================*/
+
+img { max-width:100% }
+@import "tablet";
+@import "mobile";

@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title BeardedAvenger
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .container
+      .header
+        = render 'shared/header'
+        .notices
+          = render 'shared/notices'
+      .main
+        .left.control
+          = render 'shared/user'
+        .right.control
+          = yield
+    .footer
+      = render 'shared/footer'
