@@ -7,6 +7,7 @@ set :repo_url, 'git@github.com:jhlibichuk/bearded-avenger.git'
  set :scm, :git
  set :branch, "master"
  set :keep_releases, 5
+ set :user, "ruby"  # The server's user for deploys
 
 # set :format, :pretty
 # set :log_level, :debug
@@ -16,7 +17,6 @@ set :repo_url, 'git@github.com:jhlibichuk/bearded-avenger.git'
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
 
 namespace :deploy do
 
