@@ -1,0 +1,9 @@
+.list_item
+  = simple_form_for list_item do |f|
+    %h2
+      = @entry ? "can you do better?" : "what did you find?"
+    = simple_fields_for :entry do |e|
+      = e.input :image, as: :file, input_html: {accept: "image/*", capture: "camera"}
+      = e.input :user_id, as: :hidden, input_html: { value: "#{current_user.id}"}
+      = e.input :list_item_id, as: :hidden, input_html: { value: "#{list_item.id}"}
+    = f.button :submit

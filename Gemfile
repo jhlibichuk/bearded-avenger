@@ -12,7 +12,7 @@ end
 gem 'devise', '~> 2.0.5'
 gem 'jquery-rails', '~> 2.0.0'
 gem 'thin', "~> 1.5"
-gem 'formtastic', "~> 2.2.1"
+gem 'simple_form'
 gem "haml", "~> 4.0.2"
 gem "haml-rails", "~> 0.4"
 gem 'activeadmin', "~> 0.6.0"
@@ -26,6 +26,7 @@ gem "honeypot-captcha", "~> 0.0.2"
 gem 'omniauth-facebook'
 gem "unf", "~> 0.1.3"
 gem "neat", "~> 1.3.0"
+gem 'capistrano', '~> 3.2.0'
 
 group :development do
   gem "better_errors", ">= 0.7.2"

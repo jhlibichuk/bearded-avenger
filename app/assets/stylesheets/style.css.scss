@@ -7,6 +7,7 @@
 @import "grid-settings";
 @import "neat";
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
 
 $background:#262630;
 $foreground:#35455C;
@@ -14,20 +15,28 @@ $font:#BEAEAE;
 
 $red:#E14A4A;
 $orange:#EDAD61;
+$blue: #10062E;
+
 $gray:#BEAEAE; /*font color also */
 $green:#29718F;
+$donegreen:#00EF44;
 $white: #fff;
 $black: #000;
 
+
 @import "overrides";
-h1,h2,h3{font-weight:300;padding:10px;text-align:center;width:100%; color:$white;}
-h1 { font-size:32px; }
-h2 { font-size:26px; }
-h3 { font-size:20px; }
+h1,h2,h3{font-family: 'Share Tech Mono',Courier; font-weight:300;padding:15px;text-align:center;width:100%; color:$white;}
+h1 { font-size:38px; }
+h2 { font-size:32px; }
+h3 { font-size:26px; }
+a { color: $white; text-decoration:none; }
+a:hover { color: $red; text-decoration:underline;}
+
 .colored{
   width:100%; 
   border-radius:6px 6px 0 0;
 }
+
 .colored.red { background:$red; }
 .colored.orange { background:$orange; }
 .colored.green { background:$green; }
@@ -36,21 +45,61 @@ body {
   font-family: 'Source Sans Pro', 'Arial', sans-serif;
   font-weight: 400;
   color: $font;
-  background: $background url(/assets/bgslice.png) repeat-x fixed;
-  font-size:16px;
+  background: $background;// url(/assets/bgslice.png) repeat-x fixed;
+  font-size:18px;
 }
 
 div.container { @include outer-container; padding-bottom: 10px;}
 .header {
   min-height:125px;
+  padding:15px;
+  margin-bottom:25px;
+}
+.user {
+  background: $orange;
+  color:$white;
+  display:block;
+  width:100%;
+  float:left;
+  padding:15px;
+  a{
+    font-size:24px;
+    padding:5px;
+  }
+  ul {
+    float:left;
+    display:block;
+    width:100%;
+    li {
+      float:left;
+      margin:0 5px 0 0;
+    }
+    .link {
+      float:left;
+      margin: 0 5px 0 0;
+    }
+  }
+  .current-user{
+    float:left;
+    .user-name {
+      margin-right:10px;
+    }
+    .sign-out {
+      font-size:16px;
+    }
+  }
+  .current-game{
+    float:right;
+  }
 }
 .main {
   min-height:1400px;
-    padding:15px;
-    .control.left, .control.right{
-      width:100%;
-      margin-bottom:20px;
-    }
+  margin-top:45px;
+  padding:15px;
+  .control.left, .control.right{
+    width:100%;
+    margin-bottom:20px;
+  }
 }
 
 .control {
@@ -58,18 +107,21 @@ div.container { @include outer-container; padding-bottom: 10px;}
   border-radius:6px;
 }
 .content {
-  padding:10px;
+  padding:10px 20px 10px 10px;
+  line-height:24px;
+  margin-bottom:25px;
 }
 
 .footer {
   min-height:100px;
 }
 
-
+@import "games";
 
 /* responsive
 =============================*/
 
 img { max-width:100% }
+
 @import "tablet";
 @import "mobile";

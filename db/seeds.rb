@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Entry.destroy_all
+ListItem.destroy_all
+Game.destroy_all
+
+game = Game.create!(name:"Game 1: An introduction", description: "welcome to zombocom", start_date: Time.now+2.days, end_date: Time.now+5.days)
+ListItem.create!(name: "something fresh", game_id: game.id)
+ListItem.create!(name: "something peppery", game_id: game.id)
+ListItem.create!(name: "the end of the rainbow", game_id: game.id)
+ListItem.create!(name: "seven seconds to mars", game_id: game.id)
+ListItem.create!(name: "the doctor", game_id: game.id)

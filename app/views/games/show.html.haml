@@ -1,0 +1,12 @@
+.display
+  %h1.colored.green
+    = @game.name
+  .content
+    .game
+      %h2= raw "#{@game.start_date.strftime("%m/%d/%Y")} &mdash; #{@game.end_date.strftime("%m/%d/%Y")}"
+      %p.description= @game.description
+      %ul
+        - @game.list_items.each do |li|
+          = link_to list_item_path(li) do
+            %li{class: "#{current_user.solved(li)}"}
+              = li.name
