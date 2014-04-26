@@ -26,12 +26,12 @@ gem "honeypot-captcha", "~> 0.0.2"
 gem 'omniauth-facebook'
 gem "unf", "~> 0.1.3"
 gem "neat", "~> 1.3.0"
-gem 'capistrano', '~> 3.2.0'
+gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 
 group :development do
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
-  gem "capistrano", "~> 3.0.1", require: false
+  gem 'capistrano', '~> 3.2.0', require: false
   gem "capistrano-rails", "~> 1.1.0", require: false
   gem "capistrano-bundler", "~> 1.1.1", require: false
   gem "table_print", "~> 1.5.0"

@@ -3,7 +3,7 @@ set :repo_url, 'git@github.com:jhlibichuk/bearded-avenger.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
- set :deploy_to, '/var/www/bearded_avenger'
+ set :deploy_to, '/home/ruby/www/bearded_avenger'
  set :scm, :git
  set :branch, "master"
  set :keep_releases, 5

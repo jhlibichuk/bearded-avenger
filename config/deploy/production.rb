@@ -23,7 +23,7 @@ set :rails_env, "production"
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
 # set it globally
   set :ssh_options, {
-    keys: %w(/home/josh/.ssh/id_rsa_pub),
+    keys: %w(/home/josh/.ssh/id_rsa),
     forward_agent: true
   }
 # and/or per server
