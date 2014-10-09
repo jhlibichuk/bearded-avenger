@@ -12,13 +12,17 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    puts "Auth Info Email: #{auth.info.email}"
-    puts "Auth Info Email: #{auth.uid}"
-    # email = "#{auth.uid}@facebook.com" if auth.info.email.blank?
+    
+    # FB Won't give me email in production. Fine. We fake it.
+    #puts "Auth Info Email: #{auth.info.email}"
+    #puts "Auth Info Id: #{auth.uid}"
+
+    email = auth.info.email
+    email = "#{auth.uid}@facebook.com" if email.blank?
     if user
       return user
     else
-      registered_user = User.where(:email => auth.info.email).first
+      registered_user = User.where(:email => email).first
       if registered_user
         return registered_user
       else
