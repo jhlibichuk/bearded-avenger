@@ -192,7 +192,7 @@ div.container { @include outer-container; padding-bottom: 10px;}
 /* responsive
 =============================*/
 
-img { max-width:100% }
+img { max-width:100%; }
 
 @import "tablet";
 @import "mobile";
