@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    puts "Auth Info Email: #{auth.info.email}"
+    puts "Auth Info Email: #{auth.uid}"
+    # email = "#{auth.uid}@facebook.com" if auth.info.email.blank?
     if user
       return user
     else
