@@ -1,0 +1,37 @@
+.form
+  = simple_form_for [@list_item, @entry] do |e|
+    %h3
+      = @entry.image.url ? "can you do better?" : "what did you find?"
+    .file-button.button.colored.orange Take a Photo
+    .old-file-button
+      = e.input :image, as: :file, input_html: {accept: "image/*;capture=camera", capture: "camera"}
+    = e.input :user_id, as: :hidden, input_html: { value: "#{current_user.id}"}
+    = e.input :list_item_id, as: :hidden, input_html: { value: "#{list_item.id}"}
+    = e.button :submit, "Done -- Submit Photo!", class:"colored submit button hidden", style: "background:#009b2f;"
+
+:css
+  .old-file-button{display:none;}
+  .file-button.button{text-align: center; cursor:pointer; width:50%;padding:10px;}
+
+:javascript
+  var interval = "";
+  var intervalFunc = function () {
+    if ($('.old-file-button input').val()) {
+      //$(".file-button.button").attr("style","background: #009b2f;");
+      //$(".file-button.button").html("Done!");
+      $(".submit.button").removeClass("hidden");
+      clearInterval(interval);
+      $(".file-button.button").addClass("hidden");
+    }
+  };
+
+  $('.submit.button').live("click" , function () {
+    $(".overlay").removeClass("hidden");
+    $(".modal").removeClass("hidden");
+  });
+
+  $('.file-button').live("click" , function () {
+    $('.old-file-button input').click();
+    interval = setInterval(intervalFunc, 50);
+    return false;
+  });

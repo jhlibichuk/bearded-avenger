@@ -8,11 +8,7 @@ set :repo_url, 'git@github.com:jhlibichuk/bearded-avenger.git'
  set :branch, "master"
  set :keep_releases, 5
  set :user, "ruby"  # The server's user for deploys
-
-
-set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
-set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
-
+ 
 # set :format, :pretty
 # set :log_level, :debug
 # set :pty, true

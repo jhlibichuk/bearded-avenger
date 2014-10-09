@@ -1,0 +1,15 @@
+.explore-entry
+  %h3 #{@entry.user.name}'s entry
+  %h1
+    = "#{@entry.list_item.name}"
+  - if @entry.list_item.flavor 
+    %p
+      = @entry.list_item.flavor
+  .content
+    - if @entry.image.show.url
+      .image-entry
+        %p (click image for full)
+        = link_to full_path(@entry) do
+          = image_tag @entry.image.show.url
+    .back
+      = link_to "< Back to the Gallery", explore_path 

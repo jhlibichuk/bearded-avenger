@@ -1,15 +1,68 @@
 @include media($mobile) {
-  h1{ padding:25px; }
-  .user{
-    a {
-      color:$blue;
-      font-size:30px;
+  .colored {
+    border-radius:0;
+  }
+  h1{font-size:24px}
+  h2{font-size:22px;}
+  .header{
+    width:100%;
+    display:block;
+    padding:0;
+    margin:5px 0 5px 0;
+    .top,.bottom{
+      width:100%;
+      display:block;
+    }
+    .top {
+      .logo {
+        padding:15px 0 0 5px;
+        width:50%;
+      }
+      .user {
+        padding:5px;
+      }
+    }
+    .navigation {
+      width:100%;
+      display:block;
+      margin: 10px 0 5px 0;
     }
   }
   .main {
-    margin-top:50px;
+    width:100%;
+    margin:0;
+    padding:0;
   }
-  .content {
-    line-height:32px;
+  .games.show {
+    .game {
+      width:100%;
+      ul {
+        width:100%;
+        li {
+          padding:15px;
+          margin:10px 10px 10px 5px;
+          width:100%;
+        }
+      }
+    }
+  }
+  .entries.index{
+    .image-entry {
+      max-width:350px;
+      img {
+        max-width:350px;
+      }
+    }
+    .form {
+      width:100%;
+    }
+  }
+  .explore.index{
+    .images {
+      width:97%;
+      .image {
+        width:150px;
+      }
+    }
   }
 }

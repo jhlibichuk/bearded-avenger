@@ -4,5 +4,9 @@ class BeardedController < ApplicationController
     
   end
 
+  def faq
+
+  end
+
 
 end

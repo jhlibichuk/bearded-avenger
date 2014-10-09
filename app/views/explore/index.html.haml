@@ -1,0 +1,22 @@
+%h1.colored.green Explore the Gallery
+.content
+  %ul.images
+    - @entries.each do |entry|
+      - unless entry.image.thumb.url.blank?
+        %li.image 
+          = link_to explore_entry_path(entry) do 
+            .photo
+              = image_tag entry.image.thumb.url
+            .caption
+              .list-item #{entry.list_item.name}
+              .author #{entry.user.name}
+:javascript
+  $("img").load(function(){
+      var container = document.querySelector('.images');
+      var msnry = new Masonry( container, {
+        // options
+        columnWidth: ".image",
+        gutter: 10,
+        itemSelector: '.image'
+      }); 
+  })

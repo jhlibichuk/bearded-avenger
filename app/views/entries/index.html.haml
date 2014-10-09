@@ -1,0 +1,27 @@
+.entry
+  - if @entry || @entry.user == current_user
+    %h3 (your entry)
+    %h1
+      = "#{@list_item.name}"
+    - if @list_item.flavor 
+      %p
+        = @list_item.flavor
+    .content
+      - if @entry.image.show.url
+        .image-entry
+          = link_to full_path(@entry) do
+            = image_tag @entry.image.show.url
+      = render partial: "form", locals: {list_item: @list_item, entry: @entry}
+      .back
+        = link_to "< Go Back to the List", games_path      
+  - else
+    %h3 (#{@entry.user.name}'s entry)
+    %h1
+      = "#{@list_item.name}"
+    - if @list_item.flavor 
+      %p
+        = @list_item.flavor
+    .content
+      - if @entry.image.show.url
+        .image-entry
+          = image_tag @entry.image.show.url

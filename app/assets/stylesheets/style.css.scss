@@ -17,9 +17,12 @@ $red:#E14A4A;
 $orange:#EDAD61;
 $blue: #10062E;
 
+$lightred:#F07777;
+$lightorange:#F6C489;
+
 $gray:#BEAEAE; /*font color also */
 $green:#29718F;
-$donegreen:#00EF44;
+$donegreen:#009b2f;
 $white: #fff;
 $black: #000;
 
@@ -30,9 +33,12 @@ h1 { font-size:38px; }
 h2 { font-size:32px; }
 h3 { font-size:26px; }
 a { color: $white; text-decoration:none; }
-a:hover { color: $red; text-decoration:underline;}
+a:hover { color: $orange; text-decoration:underline;}
+
+.content p { margin-bottom: 8px;}
 
 .colored{
+  border: 0px;
   width:100%; 
   border-radius:6px 6px 0 0;
 }
@@ -41,12 +47,29 @@ a:hover { color: $red; text-decoration:underline;}
 .colored.orange { background:$orange; }
 .colored.green { background:$green; }
 
+.button{
+  width:75%;
+  margin:15px auto 10px auto;
+  float:none;
+  display:block;
+  padding:15px;
+  border-radius:6px;
+  font-size:16px;
+  color:$white;
+  cursor: pointer;
+}
+.button.colored.red:hover { background:$lightred; }
+.button.colored.orange:hover { background:$lightorange; }
+
+
+.hidden{display:none;}
+
 body {
   font-family: 'Source Sans Pro', 'Arial', sans-serif;
   font-weight: 400;
   color: $font;
   background: $background;// url(/assets/bgslice.png) repeat-x fixed;
-  font-size:18px;
+  font-size:$font-size;
 }
 
 div.container { @include outer-container; padding-bottom: 10px;}
@@ -54,9 +77,29 @@ div.container { @include outer-container; padding-bottom: 10px;}
   min-height:125px;
   padding:15px;
   margin-bottom:25px;
+  .top {
+    width:100%;
+    .logo {float:left;}
+    .user {
+      float:right;
+      padding:20px;
+      .current-user{
+        float:left;
+        .user-name {
+          margin-right:10px;
+        }
+        .sign-out {
+          margin:5px;
+          font-size:16px;
+        }
+      }
+    }
+  }
 }
-.user {
-  background: $orange;
+
+.navigation {
+  //background: $orange;
+  background: $red;
   color:$white;
   display:block;
   width:100%;
@@ -79,21 +122,14 @@ div.container { @include outer-container; padding-bottom: 10px;}
       margin: 0 5px 0 0;
     }
   }
-  .current-user{
+  .snap-link{
     float:left;
-    .user-name {
-      margin-right:10px;
-    }
-    .sign-out {
-      font-size:16px;
-    }
   }
-  .current-game{
+  .explore-link{
     float:right;
   }
 }
 .main {
-  min-height:1400px;
   margin-top:45px;
   padding:15px;
   .control.left, .control.right{
@@ -113,10 +149,45 @@ div.container { @include outer-container; padding-bottom: 10px;}
 }
 
 .footer {
-  min-height:100px;
+  min-height:15px;
 }
-
+.full-entry, .full-entry img {
+  height:100%;
+  width:100%;
+}
+.overlay {  
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0.8;
+  background:black;
+}
+.modal{
+  position:fixed;
+  top:40%;
+  left:30%;
+  margin:0 auto;
+  background-color:#fff;
+  width:450px;
+  padding:15px;
+  text-align:left;
+  border:2px solid #333;
+  z-index:2000;
+  opacity:0.8;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  -moz-box-shadow: 0 0 50px #ccc;
+  -webkit-box-shadow: 0 0 50px #ccc;
+  color:$black;
+  h2{
+    color:black;
+  }
+}
 @import "games";
+@import "entries";
+@import "explore";
 
 /* responsive
 =============================*/

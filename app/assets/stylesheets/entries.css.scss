@@ -1,0 +1,38 @@
+.entries {
+  .image-entry {
+    width:500px;
+    margin:5px auto;
+    p{
+      text-align:center;
+    }
+    img { 
+      max-height:800px;
+      margin:0 auto;
+      float:none;
+      display:block;
+    }
+  }
+  .form{
+    width:500px;
+    margin:5px auto; 
+    .input{
+      display:block;
+      float:none;
+      width:75%;
+      margin: 0 auto;
+      font-size:22px;
+      padding:5px 0 0 0;
+      label{
+        margin:0 20px 0 0;
+      }
+    }
+  }
+  .back {
+    font-size:20px;
+    padding:10px;
+    margin:10px;
+    background:$green; 
+    width:200px;
+    a {color:$white;}
+  }
+}

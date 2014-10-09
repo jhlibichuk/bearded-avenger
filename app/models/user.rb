@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :provider, :uid, :auth_token
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :entries
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
                             provider:auth.provider,
                             uid:auth.uid,
                             email:auth.info.email,
-                            password:Devise.friendly_token[0,20],
+                            password:Devise.friendly_token[0,20]
                           )
       end
     end

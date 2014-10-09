@@ -5,13 +5,16 @@
       margin:0 0 10px 20px;
       line-height:20px;
     }
+    span.warn {color:$red;maring:10px 0;}
     ul {
       @include clearfix();
       li {
-        width:47%;
+        width:45%;
         float:left;
-        margin:5px 1% 10px 1%;
-        padding:0 0 0 15px;
+        padding:22px 5px;
+        margin:15px;
+        font-size:24px;
+        text-align:center;
         background:$red;
         a {
           padding:10px;
