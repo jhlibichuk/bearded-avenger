@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BeardedAvenger::Application.load_tasks
+Snapsplore::Application.load_tasks

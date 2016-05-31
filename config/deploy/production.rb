@@ -5,9 +5,9 @@ set :stage, :production
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-role :app, '162.243.54.241'
-role :web, '162.243.54.241'
-role :db,  '162.243.54.241'
+role :app, '208.113.128.7'
+role :web, '208.113.128.7'
+role :db,  '208.113.128.7'
 
 # Extended Server Syntax
 # ======================
@@ -15,7 +15,7 @@ role :db,  '162.243.54.241'
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '162.243.54.241', user: 'ruby', roles: %w{web app db}
+server '208.113.128.7', user: 'dhc-user', roles: %w{web app db}
 
 set :rails_env, "production"
 # you can set custom ssh options

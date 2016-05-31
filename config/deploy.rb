@@ -1,13 +1,13 @@
-set :application, 'bearded_avenger'
-set :repo_url, 'git@github.com:jhlibichuk/bearded-avenger.git'
+set :application, 'snapsplore'
+set :repo_url, 'git@github.com:jhlibichuk/snapsplore.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
- set :deploy_to, '/home/ruby/www/bearded_avenger'
+ set :deploy_to, '/home/dhc-user/www/snapsplore'
  set :scm, :git
  set :branch, "master"
  set :keep_releases, 5
- set :user, "ruby"  # The server's user for deploys
+ set :user, "dhc-user"  # The server's user for deploys
  
 # set :format, :pretty
 # set :log_level, :debug

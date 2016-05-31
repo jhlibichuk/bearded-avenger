@@ -1,4 +1,4 @@
-BeardedAvenger::Application.routes.draw do
+Snapsplore::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   #get "/games", to: "bearded#faq", as: "faq"
