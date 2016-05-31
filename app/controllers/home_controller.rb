@@ -1,4 +1,4 @@
-class BeardedController < ApplicationController
+class HomeController < ApplicationController
 
   def index
     

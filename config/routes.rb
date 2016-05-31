@@ -12,6 +12,6 @@ Snapsplore::Application.routes.draw do
     resources :entries
   end
   resources :games
-  root to: "bearded#index"
+  root to: "home#index"
 
 end
