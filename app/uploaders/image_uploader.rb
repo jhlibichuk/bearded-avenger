@@ -42,12 +42,12 @@ class ImageUploader < CarrierWave::Uploader::Base
    end
 
    version :thumb do
-        process :resize_to_limit => [300, 300]
+        process :resize_to_limit => [300, 305]
    end
 
    def auto_rotate
     manipulate! do |image|
-      image.auto_orient
+      image.tap(&:auto_orient)
       image.format = 'png'
       image
     end
