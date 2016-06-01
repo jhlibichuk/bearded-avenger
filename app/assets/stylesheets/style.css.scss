@@ -188,6 +188,8 @@ div.container { @include outer-container; padding-bottom: 10px;}
 @import "games";
 @import "entries";
 @import "explore";
+@import "users";
+@import "pphoto";
 
 /* responsive
 =============================*/

@@ -9,7 +9,7 @@
     - if @entry.image.show.url
       .image-entry
         %p (click image for full)
-        = link_to full_path(@entry) do
+        %a{href: @entry.image.url, rel: "prettyPhoto"}
           = image_tag @entry.image.show.url
     .back
       = link_to "< Back to the Gallery", explore_path 

@@ -21,3 +21,11 @@
           Uploading photo...
     .footer
       = render 'shared/footer'
+    %script{type: "text/javascript", src:"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-574e45ec5304dca1"}
+    :javascript
+      $(document).ready(function(){
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+          social_tools: false,
+          deeplinking:false
+        });
+      });
