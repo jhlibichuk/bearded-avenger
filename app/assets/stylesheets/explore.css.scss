@@ -1,4 +1,4 @@
-.explore {
+.explore, .users.show {
   @include fill-parent();
   .content{
     @include fill-parent();
@@ -11,7 +11,7 @@
     margin:0 auto;
     display:block;
     .image {
-      width:287px;
+      width:280px;
       margin-top:7px;
       display:block;
       border-radius:2px 2px 0 0;
@@ -38,7 +38,8 @@
       }
       .author {
         font-size:14px;
-        color:$gray;
+        a{color:$gray;}
+        a:hover{color:$orange;}
       }
     }
   }

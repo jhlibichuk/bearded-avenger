@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   has_many :entries
 
+  def to_param
+    "#{self.id}-#{self.name.parameterize}"
+  end
+
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     

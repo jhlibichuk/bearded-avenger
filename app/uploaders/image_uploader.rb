@@ -38,11 +38,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
    version :show do
-        process :resize_to_limit => [500, 1000]
+        process :resize_to_limit => [575, 950]
    end
 
    version :thumb do
-        process :resize_to_limit => [370, 500]
+        process :resize_to_limit => [300, 300]
    end
 
    def auto_rotate
