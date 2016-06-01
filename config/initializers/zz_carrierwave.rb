@@ -9,9 +9,11 @@ CarrierWave.configure do |config|
     # see https://github.com/fog/fog/issues/3275 for more details
     aws_signature_version: 2
   }
+  config.fog_attributes =  { ssl_version: :TLSv1_2 }
   # bucket name from above...
-  config.fog_directory = 'bucket'
+  config.fog_directory = 'snapsplore.objects.dreamhost.com'
   config.fog_public = true
+  config.fog_authenticated_url_expiration = 600
   # include bucket name from above in url...
   config.asset_host = 'https://objects.dreamhost.com/snapsplore'
   # this is a heroku thing - you may or may not need to consider this 

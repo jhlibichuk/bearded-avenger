@@ -28,3 +28,4 @@ pickle-email-*.html
 /public/feeds/*
 .ruby-version
 .ruby-gemset
+public/public*
