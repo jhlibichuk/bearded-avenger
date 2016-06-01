@@ -30,6 +30,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process :auto_rotate
+  process :convert => 'jpg'
   process :resize_to_limit => [1000, 1200]
   #
   # def scale(width, height)
@@ -47,8 +48,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
    def auto_rotate
     manipulate! do |image|
-      image.tap(&:auto_orient)
-      image.format = 'png'
+      image.auto_orient!
+      image.strip!
       image
     end
    end
