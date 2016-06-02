@@ -43,7 +43,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    end
 
    version :thumb do
-        process :resize_to_limit => [300, 305]
+        process :resize_to_limit => [300, 0]
    end
 
    def auto_rotate
